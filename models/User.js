@@ -8,7 +8,7 @@ const sequelize = new Sequelize('fairy', 'root', '', {
 
 // Define a Model for 'User' table
 const User = sequelize.define('User', {
-  // Model attributes are defined here
+  id: { type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true },
   firstName: {
     type: DataTypes.STRING,
     allowNull: false
@@ -29,7 +29,7 @@ const User = sequelize.define('User', {
     allowNull: false
   }
 }, {
-  // Other model options go here
+  sequelize, modelName: 'User'
 });
 
 User.sync()
