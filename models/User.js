@@ -15,6 +15,18 @@ const User = sequelize.define('User', {
   },
   lastName: {
     type: DataTypes.STRING
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true, // This enforces uniqueness for the 'email' field
+    validate: {
+      isEmail: true, // This will validate that the email is in a valid format
+    },
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false
   }
 }, {
   // Other model options go here
