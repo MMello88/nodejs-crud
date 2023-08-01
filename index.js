@@ -25,7 +25,7 @@ app.use(cors({
 app.use(express.json())
 
 // Proteja todas as rotas, exceto /login
-app.use(ejwt({ secret: '79a359ab1798240389b3fe71c676bf0fa33f9f9eef54116aab082184e8e73e8f', algorithms: ['HS256'] }).unless({ path: ['/api/users/sigin', '/api/users/signup', '/api/users/refresh-token'] }));
+app.use(ejwt({ secret: '79a359ab1798240389b3fe71c676bf0fa33f9f9eef54116aab082184e8e73e8f', algorithms: ['HS256'] }).unless({ path: ['/api/users/signin', '/api/users/signup', '/api/users/refresh-token'] }));
 
 app.use('/api/users', userRoutes);
 
